@@ -1,0 +1,36 @@
+﻿Multiple key presses - resolved GetKeyboardState
+
+Ball "sticking" to edges - resolved logic error speed was able to decrease in one axis to near 0 
+which made it look like the ball would stick to the 
+edge.
+
+Ball Leaving screen - Resolved, when ball reached 
+edge of screen the direction of movement flipped 
+but if the ball did not get back into the play area
+that tick then the direction could flip again next 
+tick as the ball was still out of screen. fixed by 
+checking which way the ball was going before 
+flipping or not.
+
+ball looked horrible when I could see it go left
+then down so I hide the ball before moving it then 
+show it after movement is done each tick. This 
+looks much better.
+
+Ball was going through paddles. Used the 
+TimerBall.Stop to see if the ball was triggering 
+the if statement and intersecting. Bug was the same 
+as the Leaving screen one earlier, the if statement 
+now checks which way the ball is going before 
+flipping.
+
+paddles can go off the edge of the screen still?? - 
+resolved. missed a set of parenthesis
+
+made the ready prompt only appear when the ball is 
+going to go toward the player next turn. as the AI 
+is always ready and doesnt need the prompt.
+
+Wish to implement a single player save state. so
+that the game can be left then returned to later
+from the last level that the player was playing.
